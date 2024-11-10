@@ -30,7 +30,7 @@ export default function Pag2() {
         </section>
 
         <section>
-          <div className='text-center top-80 pl-40 text-blue-950 text-6xl bg-green-300 hover:bg-red-300 hover:text-lime-200'>prova</div>
+          <div className='text-center top-80 pl-40 text-blue-950 text-6xl bg-green-300 hover:bg-red-300 duration-300 ease-in-out hover:text-lime-200'>prova</div>
         </section>
 
 
