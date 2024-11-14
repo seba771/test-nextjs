@@ -3,11 +3,7 @@ export type ExplainingSectionProps = {
   description: string;
 };
 
-export default function ExplainingSection({
-  jhonny,
-}: {
-  jhonny: ExplainingSectionProps;
-}) {
+export default function ExplainingSection({jhonny,}: {jhonny: ExplainingSectionProps;}) {
   return (
     <section className="w-full h-full ">
       <h1 className="md:text-4xl text-3xl text-black font-semibold border border-b-violet-200">

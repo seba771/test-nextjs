@@ -6,6 +6,8 @@ import ExplainingSection, {
 import ListSection, {
   ListSectionProps,
 } from "@/components/templates/save-the-bees/list";
+import ProvaProps from "@/components/templates/save-the-bees/responsivegrid";
+import Box, { BoxProps } from "@/components/templates/save-the-bees/box";
 
 const jhonny: ExplainingSectionProps = {
   title: "L'importanza delle Api",
@@ -45,6 +47,46 @@ const list2: ListSectionProps = {
   ],
 };
 
+const list3: ListSectionProps = {
+  title: "Simili ma diversi",
+  description: "Le api e le vespe, pur essendo molto simili, si differenziano in vari aspetti. Le api sono impollinatrici vitali per l’ambiente, mentre le vespe sono predatori. Entrambi possiedono il pungiglione, ma le vespe possono pungere più volte senza morire. Ecco alcune differenze principali: ",
+  items: [
+    "Comportamento: Le api impollinano i fiori, mentre le vespe cacciano altri insetti.",
+    "Le api hanno corpi pelosi, le vespe sono lisce.",
+    " Ciclo di vita: Le api muoiono dopo aver punto, le vespe no.",
+    "  Utilizzo: Le api producono miele, le vespe non sono produttive.",
+  ]
+}
+
+
+const list4: ListSectionProps = {
+  title: "Cosa fanno",
+  description: "",
+  items: [
+    "Impollinano l'80% delle piante da fiore.",
+    "Sostengono la biodiversità.",
+  ]
+}
+
+const pablo: ProvaProps = {
+  title: "Testimonianze",
+  description: "Cosa ne pensa la gente",
+  subtitle: "Mario Rosso: Apicoltore",
+  description1: " Le api sono fondamentali per il mio lavoro. Da quando la loro popolazione è in declino, ho notato un calo nella produttività dei miei frutti. La mancanza di impollinazione sta davvero minacciando la mia attività. Mi preoccupa che il problema venga ignorato. È urgente intervenire per proteggere questi insetti essenziali per l'ecosistema e l'agricoltura",
+
+  subtitle2: "Silvia Monin: Insegnante scuola elementare",
+  description2: "Credo che le api siano un ottimo strumento per sensibilizzare i bambini sui temi ecologici e dell'ambiente. Nelle scuole, parliamo spesso di come le api siano fondamentali per la natura e l'alimentazione. Coinvolgere i più bambini in attività pratiche, come la creazione di piccoli giardini o l'osservazione delle api, aiuta a sviluppare un forte senso di responsabilità e consapevolezza. Le api sono una risorsa educativa che ci insegna la cooperazione e la cura dell'ambiente.",
+
+  subtitle3: "Laura Cechi: Ambientalista ",
+  description3: "Ogni anno, sempre più studi confermano l'importanza delle api per l'equilibrio del nostro ambiente. Il loro declino non è solo un problema per l'agricoltura, ma per la biodiversità globale. Credo che dovremmo sensibilizzare di più la popolazione sulla gravità di questa situazione e fare di più per proteggerle, prima che sia troppo tardi. Ritengo che la gente non si renda conto di quanto sia grave la situazione. Le api sono vitali per la produzione del cibo che mangiamo, ma l'uso eccessivo di pesticidi e la perdita di habitat stanno mettendo a rischio la loro sopravvivenza. Dobbiamo educare i giovani a rispettare questi insetti e promuovere politiche più sostenibili."
+}
+
+const boxed: BoxProps={
+  title:"Ecco come puoi aiutare!",
+  description:"Le api stanno soffrendo, abbiamo bisogno del tuo aiuto se vogliamo migliorare la loro situazione",
+  description2:"Effettua una donazione",
+}
+
 export default function Homepage() {
   return (
     <section className="w-full h-full">
@@ -68,17 +110,7 @@ export default function Homepage() {
           </div>
         </section>
 
-        <section className="w-full ">
-          <div>
-            <p className="text-primary font-semibold border-b-2 text-4xl">
-              Cosa fanno
-            </p>
-            <div className="flex flex-col gap-2 text-secondary text-xl font-light pt-4">
-              <li>Impollinano l'80% delle piante da fiore.</li>
-              <li>Sostengono la biodiversità.</li>
-            </div>
-          </div>
-        </section>
+        <ListSection list={list4} />
 
         <section className="w-full">
           <div>
@@ -133,105 +165,11 @@ export default function Homepage() {
             />
           </div>
         </section>
-
+        <ListSection list={list1} />
+        <ListSection list={list3} />
         <section className="w-full">
-          <div>
-            <ListSection list={list1}/>
-          </div>
-        </section>
+          <ProvaProps pablo={pablo} />
 
-        <section className="w-full">
-          <div>
-            <p className="text-primary font-semibold text-4xl border-b-2">
-              Simili ma diversi
-            </p>
-          </div>
-          <div className="text-secondary text-xl font-light pt-4">
-            <p>
-              Le api e le vespe, pur essendo molto simili, si differenziano in
-              vari aspetti. Le api sono impollinatrici vitali per l’ambiente,
-              mentre le vespe sono predatori. Entrambi possiedono il
-              pungiglione, ma le vespe possono pungere più volte senza morire.
-              Ecco alcune differenze principali:
-            </p>
-            <div className="flex flex-col gap-2 pt-6">
-              <li>
-                Comportamento: Le api impollinano i fiori, mentre le vespe
-                cacciano altri insetti.
-              </li>
-              <li>Aspetto: Le api hanno corpi pelosi, le vespe sono lisce.</li>
-              <li>
-                Ciclo di vita: Le api muoiono dopo aver punto, le vespe no.
-              </li>
-              <li>
-                Utilizzo: Le api producono miele, le vespe non sono produttive.
-              </li>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full">
-          <div>
-            <p className="text-primary font-semibold text-4xl border-b-2">
-              Testimonianze
-            </p>
-          </div>
-          <div className="text-secondary text-xl font-light pt-4 pb-32">
-            <p> Cosa ne pensa la gente</p>
-            <div className="grid grid-cols-2 gap-24 pt-12">
-              <div className="flex flex-col gap-24">
-                <div>
-                  <p className="font-semibold text-primary pb-2">
-                    Mario Rosso: Apicoltore
-                  </p>
-                  <p>
-                    Le api sono fondamentali per il mio lavoro. Da quando la
-                    loro popolazione è in declino, ho notato un calo nella
-                    produttività dei miei frutti. La mancanza di impollinazione
-                    sta davvero minacciando la mia attività. Mi preoccupa che il
-                    problema venga ignorato. È urgente intervenire per
-                    proteggere questi insetti essenziali per l'ecosistema e
-                    l'agricoltura
-                  </p>
-                </div>
-                <div>
-                  <p className="font-semibold text-primary pb-2">
-                    Silvia Monin: Insegnante scuola elementare
-                  </p>
-                  <p>
-                    Credo che le api siano un ottimo strumento per
-                    sensibilizzare i bambini sui temi ecologici e dell'ambiente.
-                    Nelle scuole, parliamo spesso di come le api siano
-                    fondamentali per la natura e l'alimentazione. Coinvolgere i
-                    più bambini in attività pratiche, come la creazione di
-                    piccoli giardini o l'osservazione delle api, aiuta a
-                    sviluppare un forte senso di responsabilità e
-                    consapevolezza. Le api sono una risorsa educativa che ci
-                    insegna la cooperazione e la cura dell'ambiente.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <p className="font-semibold text-primary pb-2">
-                  Laura Cechi: Ambientalista
-                </p>
-                <p>
-                  Ogni anno, sempre più studi confermano l'importanza delle api
-                  per l'equilibrio del nostro ambiente. Il loro declino non è
-                  solo un problema per l'agricoltura, ma per la biodiversità
-                  globale. Credo che dovremmo sensibilizzare di più la
-                  popolazione sulla gravità di questa situazione e fare di più
-                  per proteggerle, prima che sia troppo tardi. Ritengo che la
-                  gente non si renda conto di quanto sia grave la situazione. Le
-                  api sono vitali per la produzione del cibo che mangiamo, ma
-                  l'uso eccessivo di pesticidi e la perdita di habitat stanno
-                  mettendo a rischio la loro sopravvivenza. Dobbiamo educare i
-                  giovani a rispettare questi insetti e promuovere politiche più
-                  sostenibili.
-                </p>
-              </div>
-            </div>
-          </div>
           <div className="p-16 text-center flex flex-col items-center justify-center border-2 border-black rounded-md">
             <p className="font-semibold text-primary text-6xl">
               Ecco come puoi aiutare!
@@ -240,6 +178,7 @@ export default function Homepage() {
               Le api stanno soffrendo, abbiamo bisogno del tuo aiuto se vogliamo
               migliorare la loro situazione
             </p>
+
 
             <Link
               className="shadow-[0px_0px_15px_16px_rgba(236,_72,_153,_0.15)] border-2 rounded-full border-black flex items-center justify-center p-3 "
@@ -279,12 +218,17 @@ export default function Homepage() {
                 />
               </svg>
             </Link>
+
+
           </div>
         </section>
 
         <section className="w-full pb-28">
-          <ListSection list={list2}/>
+          <ListSection list={list2} />
         </section>
+
+      <Box boxed={boxed}/>
+
       </section>
     </section>
   );
