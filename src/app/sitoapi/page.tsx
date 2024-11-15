@@ -9,6 +9,7 @@ import ListSection, {
 import ProvaProps, { ReviewProps } from "@/components/templates/save-the-bees/responsivegrid";
 import Box, { BoxProps } from "@/components/templates/save-the-bees/box";
 import Prova from "@/components/templates/save-the-bees/responsivegrid";
+import ReviewSection from "@/components/templates/save-the-bees/responsivegrid";
 
 const jhonny: ExplainingSectionProps = {
   title: "L'importanza delle Api",
@@ -75,7 +76,7 @@ const boxed: BoxProps = {
   buttonText: "Effettua una donazione",
 }
 
-const reviewSectionProps: ReviewProps = {
+const reviewData: ReviewProps = {
   title: "Testimonianze",
   description: "Cosa ne pensa la gente",
   reviewCard: [
@@ -88,7 +89,7 @@ const reviewSectionProps: ReviewProps = {
 
     }, {
       name: "Laura Cechi: Ambientalista",
-      review: " Ogni anno, sempre più studi confermano l'importanza delle api per l'equilibrio del nostro ambiente. Il loro declino non è solo un problema per l'agricoltura, ma per la biodiversità globale. Credo che dovremmo sensibilizzare di più la popolazione sulla gravità di questa situazione e fare di più per proteggerle, prima che sia troppo tardi. Ritengo che la gente non si renda conto di quanto sia grave la situazione. Le api sono vitali per la produzione del cibo che mangiamo, ma l'uso eccessivo di pesticidi e la perdita di habitat stanno mettendo a rischio la loro sopravvivenza. Dobbiamo educare i giovani a rispettare questi insetti e promuovere politiche più sostenibili."
+      review: "Ogni anno, sempre più studi confermano l'importanza delle api per l'equilibrio del nostro ambiente. Il loro declino non è solo un problema per l'agricoltura, ma per la biodiversità globale. Credo che dovremmo sensibilizzare di più la popolazione sulla gravità di questa situazione e fare di più per proteggerle, prima che sia troppo tardi. Ritengo che la gente non si renda conto di quanto sia grave la situazione. Le api sono vitali per la produzione del cibo che mangiamo, ma l'uso eccessivo di pesticidi e la perdita di habitat stanno mettendo a rischio la loro sopravvivenza. Dobbiamo educare i giovani a rispettare questi insetti e promuovere politiche più sostenibili."
     }
   ]
 }
@@ -161,77 +162,31 @@ export default function Homepage() {
           </div>
 
           <div className="flex md:w-1/2 w-full h-[400px]">
-            
+          <Image
+              src="/images/image.png"
+              alt="Esempio di immagine"
+              width={500}
+              height={400}
+              loading="lazy"
+              className="object-cover w-full"
+            />
           </div>
         </section>
         <ListSection list={list1} />
         <ListSection list={list3} />
         <section className="w-full">
-          
-
-          
-           <p>...</p>
-           
 
 
-          <div className="p-16 text-center flex flex-col items-center justify-center border-2 border-black rounded-md">
-            <p className="font-semibold text-primary text-6xl">
-              Ecco come puoi aiutare!
-            </p>
-            <p className="text-secondary text-3xl font-light pt-2 pb-10">
-              Le api stanno soffrendo, abbiamo bisogno del tuo aiuto se vogliamo
-              migliorare la loro situazione
-            </p>
-
-
-            <Link
-              className="shadow-[0px_0px_15px_16px_rgba(236,_72,_153,_0.15)] border-2 rounded-full border-black flex items-center justify-center p-3 "
-              href=""
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="36"
-                height="36"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-6.616a1 1 0 0 0-.67.257l-2.88 2.592A.5.5 0 0 1 8 18.477V17a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
-                />
-              </svg>{" "}
-              <p className="text-primary text-3xl font-semibold px-10">
-                Effettua una donazione
-              </p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="36"
-                height="36"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-6.616a1 1 0 0 0-.67.257l-2.88 2.592A.5.5 0 0 1 8 18.477V17a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
-                />
-              </svg>
-            </Link>
-
-
-          </div>
+        <ReviewSection review={reviewData} />
+        
+        <Box boxed={boxed} />
         </section>
 
         <section className="w-full pb-28">
           <ListSection list={list2} />
         </section>
 
-        <Box boxed={boxed} />
+
 
       </section>
     </section>
