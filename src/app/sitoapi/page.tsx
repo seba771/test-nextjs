@@ -6,8 +6,9 @@ import ExplainingSection, {
 import ListSection, {
   ListSectionProps,
 } from "@/components/templates/save-the-bees/list";
-import ProvaProps from "@/components/templates/save-the-bees/responsivegrid";
+import ProvaProps, { ReviewProps } from "@/components/templates/save-the-bees/responsivegrid";
 import Box, { BoxProps } from "@/components/templates/save-the-bees/box";
+import Prova from "@/components/templates/save-the-bees/responsivegrid";
 
 const jhonny: ExplainingSectionProps = {
   title: "L'importanza delle Api",
@@ -68,23 +69,28 @@ const list4: ListSectionProps = {
   ]
 }
 
-const pablo: ProvaProps = {
-  title: "Testimonianze",
-  description: "Cosa ne pensa la gente",
-  subtitle: "Mario Rosso: Apicoltore",
-  description1: " Le api sono fondamentali per il mio lavoro. Da quando la loro popolazione è in declino, ho notato un calo nella produttività dei miei frutti. La mancanza di impollinazione sta davvero minacciando la mia attività. Mi preoccupa che il problema venga ignorato. È urgente intervenire per proteggere questi insetti essenziali per l'ecosistema e l'agricoltura",
-
-  subtitle2: "Silvia Monin: Insegnante scuola elementare",
-  description2: "Credo che le api siano un ottimo strumento per sensibilizzare i bambini sui temi ecologici e dell'ambiente. Nelle scuole, parliamo spesso di come le api siano fondamentali per la natura e l'alimentazione. Coinvolgere i più bambini in attività pratiche, come la creazione di piccoli giardini o l'osservazione delle api, aiuta a sviluppare un forte senso di responsabilità e consapevolezza. Le api sono una risorsa educativa che ci insegna la cooperazione e la cura dell'ambiente.",
-
-  subtitle3: "Laura Cechi: Ambientalista ",
-  description3: "Ogni anno, sempre più studi confermano l'importanza delle api per l'equilibrio del nostro ambiente. Il loro declino non è solo un problema per l'agricoltura, ma per la biodiversità globale. Credo che dovremmo sensibilizzare di più la popolazione sulla gravità di questa situazione e fare di più per proteggerle, prima che sia troppo tardi. Ritengo che la gente non si renda conto di quanto sia grave la situazione. Le api sono vitali per la produzione del cibo che mangiamo, ma l'uso eccessivo di pesticidi e la perdita di habitat stanno mettendo a rischio la loro sopravvivenza. Dobbiamo educare i giovani a rispettare questi insetti e promuovere politiche più sostenibili."
+const boxed: BoxProps = {
+  title: "Ecco come puoi aiutare!",
+  description: "Le api stanno soffrendo, abbiamo bisogno del tuo aiuto se vogliamo migliorare la loro situazione",
+  buttonText: "Effettua una donazione",
 }
 
-const boxed: BoxProps={
-  title:"Ecco come puoi aiutare!",
-  description:"Le api stanno soffrendo, abbiamo bisogno del tuo aiuto se vogliamo migliorare la loro situazione",
-  description2:"Effettua una donazione",
+const reviewSectionProps: ReviewProps = {
+  title: "Testimonianze",
+  description: "Cosa ne pensa la gente",
+  reviewCard: [
+    {
+      name: "Mario Rosso: Apicoltore",
+      review: " Le api sono fondamentali per il mio lavoro. Da quando la loro popolazione è in declino, ho notato un calo nella produttività dei miei frutti. La mancanza di impollinazione sta davvero minacciando la mia attività. Mi preoccupa che il problema venga ignorato. È urgente intervenire per proteggere questi insetti essenziali per l'ecosistema e l'agricoltura",
+    }, {
+      name: "Silvia Monin: Insegnante scuola elementare",
+      review: "Credo che le api siano un ottimo strumento per sensibilizzare i bambini sui temi ecologici e dell'ambiente. Nelle scuole, parliamo spesso di come le api siano fondamentali per la natura e l'alimentazione. Coinvolgere i più bambini in attività pratiche, come la creazione di piccoli giardini o l'osservazione delle api, aiuta a sviluppare un forte senso di responsabilità e consapevolezza. Le api sono una risorsa educativa che ci insegna la cooperazione e la cura dell'ambiente.",
+
+    }, {
+      name: "Laura Cechi: Ambientalista",
+      review: " Ogni anno, sempre più studi confermano l'importanza delle api per l'equilibrio del nostro ambiente. Il loro declino non è solo un problema per l'agricoltura, ma per la biodiversità globale. Credo che dovremmo sensibilizzare di più la popolazione sulla gravità di questa situazione e fare di più per proteggerle, prima che sia troppo tardi. Ritengo che la gente non si renda conto di quanto sia grave la situazione. Le api sono vitali per la produzione del cibo che mangiamo, ma l'uso eccessivo di pesticidi e la perdita di habitat stanno mettendo a rischio la loro sopravvivenza. Dobbiamo educare i giovani a rispettare questi insetti e promuovere politiche più sostenibili."
+    }
+  ]
 }
 
 export default function Homepage() {
@@ -155,20 +161,18 @@ export default function Homepage() {
           </div>
 
           <div className="flex md:w-1/2 w-full h-[400px]">
-            <Image
-              src="/images/image.png"
-              alt="Esempio di immagine"
-              width={600}
-              height={500}
-              loading="lazy"
-              className="object-cover w-full"
-            />
+            
           </div>
         </section>
         <ListSection list={list1} />
         <ListSection list={list3} />
         <section className="w-full">
-          <ProvaProps pablo={pablo} />
+          
+
+          
+           <p>...</p>
+           
+
 
           <div className="p-16 text-center flex flex-col items-center justify-center border-2 border-black rounded-md">
             <p className="font-semibold text-primary text-6xl">
@@ -227,7 +231,7 @@ export default function Homepage() {
           <ListSection list={list2} />
         </section>
 
-      <Box boxed={boxed}/>
+        <Box boxed={boxed} />
 
       </section>
     </section>
