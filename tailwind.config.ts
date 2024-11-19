@@ -6,7 +6,8 @@ const config: Config = {
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}", // Aggiungi il percorso per la scansione dei file in src
+    "./src/**/*.{js,ts,jsx,tsx}", // Aggiungi anche il percorso per i file JS, JSX, TSX
   ],
   theme: {
     extend: {
